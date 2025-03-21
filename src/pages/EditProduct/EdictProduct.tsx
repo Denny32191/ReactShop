@@ -7,18 +7,26 @@ import { Button, Form, Input, Typography } from "antd";
 
 const { Title } = Typography;
 
+
+interface FormValues {
+  title: string;
+  description: string;
+  price: number;
+  thumbnail: string;
+}
+
 const EditProductPage: React.FC = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { id } = useParams<{ id: string }>();
   const { products } = useSelector((state: RootState) => state.products);
 
-  // Находим продукт по ID
+
   const product = products.find((p) => p.id === parseInt(id || "", 10));
 
   const [form] = Form.useForm();
 
-  // Заполняем форму данными продукта
+
   useEffect(() => {
     if (product) {
       form.setFieldsValue({
@@ -28,26 +36,36 @@ const EditProductPage: React.FC = () => {
         thumbnail: product.thumbnail,
       });
     }
-  }, [product, form]);
+  }, [product]); 
 
-  // Обработчик отправки формы
-  const handleSubmit = (values: any) => {
+
+  const handleSubmit = (values: FormValues) => {
     if (product) {
       const updatedProduct = {
         ...product,
         ...values,
       };
       dispatch(editProduct(updatedProduct));
-      navigate("/"); // Переход на главную страницу
+      navigate("/");
     }
   };
 
   if (!product) {
-    return <div>Product not found</div>;
+    return (
+      <div style={{ textAlign: "center", padding: 24 }}>
+        <Title level={4}>Product not found</Title>
+        <Button type="primary" onClick={() => navigate("/")}>
+          Go back to Products
+        </Button>
+      </div>
+    );
   }
 
   return (
-    <div className="edit-product-container">
+    <div
+      className="edit-product-container"
+      style={{ maxWidth: 600, margin: "0 auto", padding: 24 }}
+    >
       <Title level={2}>Edit Product</Title>
       <Form form={form} onFinish={handleSubmit} layout="vertical">
         <Form.Item
@@ -87,4 +105,5 @@ const EditProductPage: React.FC = () => {
     </div>
   );
 };
+
 export default EditProductPage;

@@ -1,5 +1,5 @@
 import React from "react";
-import { Pagination } from "antd";
+import { Pagination } from 'antd'
 import "./PagintationControl.css"; // Импортируем стили
 
 interface PaginationControlProps {

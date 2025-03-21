@@ -58,10 +58,11 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
           alt={product.title}
           src={product.thumbnail}
           style={{
-            height: 120,
+            maxWidth: 200,
+            height: 200,
             objectFit: "cover",
-            borderTopLeftRadius: 12,
-            borderTopRightRadius: 12,
+            borderTopLeftRadius: 4,
+            borderTopRightRadius: 4,
           }}
         />
       }
@@ -73,10 +74,10 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
       <Text type="secondary" style={{ fontSize: 12, display: "block", marginBottom: 8 }}>
         {product.description.slice(0, 30)}...
       </Text>
-      <Text strong style={{ fontSize: 14, color: "#1890ff" }}>
+      <Text strong style={{ fontSize: 14, color: "#1890ff",}}>
         ${product.price}
       </Text>
-      <Space style={{ marginTop: 8 }}>
+      <Space style={{ marginTop: 8, display: "flex", justifyContent: "space-between"}}>
         <Button
           icon={product.liked ? <HeartFilled /> : <HeartOutlined />}
           size="small"
