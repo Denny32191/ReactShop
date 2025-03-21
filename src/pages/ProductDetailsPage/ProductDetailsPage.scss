@@ -1,0 +1,90 @@
+// Основные стили для контейнера
+.product-details-container {
+    padding: 24px;
+    max-width: 600px;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+  }
+  
+  // Стили для кнопки "Назад"
+  .back-button {
+    background-color: #1890ff;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-bottom: 24px;
+  
+    &:hover {
+      background-color: #40a9ff;
+    }
+  }
+  
+  // Стили для карточки продукта
+  .product-card {
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    background: white;
+    padding: 16px;
+  
+    .product-image {
+
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+  
+    .product-title {
+      color: #1890ff;
+      margin: 16px 0;
+      font-size: 24px;
+    }
+  
+    .product-description {
+      font-size: 16px;
+      color: #666;
+      margin-bottom: 24px;
+    }
+  
+    .product-price {
+      font-size: 24px;
+      color: #52c41a;
+      font-weight: bold;
+      margin-bottom: 16px;
+    }
+  
+    .product-liked {
+      font-size: 16px;
+      color: #666;
+    }
+  }
+  
+
+  .not-found-container {
+    text-align: center;
+    padding: 24px;
+  
+    h5 {
+      margin-bottom: 16px;
+      font-size: 18px;
+      color: #666;
+    }
+  
+    .back-button {
+      background-color: #1890ff;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+  
+      &:hover {
+        background-color: #40a9ff;
+      }
+    }
+  }

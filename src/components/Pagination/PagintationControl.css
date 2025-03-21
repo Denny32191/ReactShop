@@ -1,0 +1,21 @@
+.custom-pagination ul.ant-pagination {
+    list-style: none;
+    padding-left: 0; 
+    margin: 0;
+  }
+  
+  .custom-pagination .ant-pagination-item {
+    margin: 0 4px; 
+    list-style: none;
+  }
+  
+ 
+  .custom-pagination .ant-pagination-item-active a {
+    color:#1890ff; 
+  }
+  
+  .custom-pagination .ant-pagination-prev,
+  .custom-pagination .ant-pagination-next {
+    margin: 0 4px; 
+    list-style: none;
+  }
